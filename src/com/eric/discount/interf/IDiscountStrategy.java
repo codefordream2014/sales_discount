@@ -1,5 +1,5 @@
 /**
- * 
+ * 商品打折策略接口
  */
 package com.eric.discount.interf;
 

@@ -13,9 +13,6 @@ import com.eric.utils.Utils;
  */
 public class Main {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		process();
 	}
