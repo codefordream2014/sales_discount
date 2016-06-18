@@ -40,25 +40,25 @@ public class Main {
 			
 			System.out.println("***<没钱赚商店>购物清单***\n");
 			
-			Goods g1 = new Goods(1, "可口可乐", 2, 7.00, "膨化食品", "ITEM000001",
+			Goods coca = new Goods(1, "可口可乐", 2, 7.00, "膨化食品", "ITEM000001",
 					 new BuyTwoForOneStrategy());
-			printGoods(g1, cocaBuyedAmount);
-			System.out.println("小计： " + Utils.decimalFormat(g1.caculate(cocaBuyedAmount)) + "（元）");
+			printGoods(coca, cocaBuyedAmount);
+			System.out.println("小计： " + Utils.decimalFormat(coca.caculate(cocaBuyedAmount)) + "（元）");
 			
-			sum+=g1.caculate(cocaBuyedAmount);
+			sum+=coca.caculate(cocaBuyedAmount);
 			
-			Goods g2 = new Goods(2, "羽毛球", 4, 3.00, "饮料", "ITEM000002",
+			Goods badminton = new Goods(2, "羽毛球", 4, 3.00, "饮料", "ITEM000002",
 					 new BuyTwoForOneStrategy());
-			printGoods(g2, badmintonBuyedAmount);
-			System.out.println("小计： " + Utils.decimalFormat(g2.caculate(badmintonBuyedAmount)) + "（元）");
+			printGoods(badminton, badmintonBuyedAmount);
+			System.out.println("小计： " + Utils.decimalFormat(badminton.caculate(badmintonBuyedAmount)) + "（元）");
 			
-			sum+=g2.caculate(badmintonBuyedAmount);
+			sum+=badminton.caculate(badmintonBuyedAmount);
 			
-			Goods g3 = new Goods(3, "苹果", 40, 3.00, "水果", "ITEM000003",
+			Goods apple = new Goods(3, "苹果", 40, 3.00, "水果", "ITEM000003",
 					 new NinetyFiveStrategy());
-			printGoods(g3, appleBuyedAmount);
-			System.out.println("小计： " + Utils.decimalFormat(g3.caculate(appleBuyedAmount)) + "（元）" + g3.getDiscountInfo(appleBuyedAmount));
-			sum+=g3.caculate(appleBuyedAmount);
+			printGoods(apple, appleBuyedAmount);
+			System.out.println("小计： " + Utils.decimalFormat(apple.caculate(appleBuyedAmount)) + "（元）" + apple.getDiscountInfo(appleBuyedAmount));
+			sum+=apple.caculate(appleBuyedAmount);
 			
 			
 			System.out.println("-------------------------");
@@ -69,7 +69,7 @@ public class Main {
 			System.out.println("-------------------------");
 			
 			System.out.println("总计： " + Utils.decimalFormat(sum) + "（元）");
-			double deduction = g1.deduct(cocaBuyedAmount) + g2.deduct(badmintonBuyedAmount)+ g3.deduct(appleBuyedAmount);
+			double deduction = coca.deduct(cocaBuyedAmount) + badminton.deduct(badmintonBuyedAmount)+ apple.deduct(appleBuyedAmount);
 			System.out.println("节省： " + Utils.decimalFormat(deduction) + "（元）");
 			System.out.println("*************************");
 		
